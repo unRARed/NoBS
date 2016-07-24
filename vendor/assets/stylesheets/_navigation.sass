@@ -1,0 +1,59 @@
+.navigation
+  background-color: $primary-color
+  .navigation__list
+    padding-left: 0
+    margin: 0
+    .navigation__item
+      position: relative
+      .navigation__list
+        position: absolute
+        display: none
+        top: 42px // 14 * 2 + 14
+        left: -1px
+        width: 50%
+        z-index: 1
+      &:hover
+        background-color: darken($primary-color, 5%)
+        .navigation__list
+          border: 1px solid darken($primary-color, 10%)
+          width: 200px // not sure what else to do here?
+          background-color: lighten($primary-color, 5%)
+          display: inline-block
+          .navigation__item
+            width: 100%
+            float: none
+            border-left: 0
+            border-top: 1px solid darken($primary-color, 10%)
+            &:first-child
+              border-top: 0
+  .navigation__item,
+  .navigation__title
+    float: left
+    list-style: none
+  .navigation__item
+    cursor: pointer
+    .navigation__anchor
+      padding: 14px 12px
+      display: inline-block
+      color: lighten($primary-color, 60%)
+      transition: color 0.2s ease-out, background-color 0.2s ease-out
+      &:hover
+        color: white
+        background-color: darken($primary-color, 5%)
+    + .navigation__item
+      border-left: 1px solid darken($primary-color, 10%)
+  .navigation__title
+    position: relative
+    color: lighten($primary-color, 60%)
+    font-weight: bold
+    padding: 14px 12px
+    .navigation__item
+      font-weight: normal
+    .navigation__anchor
+      color: white
+    &.navigation__item:hover
+      background-color: darken($primary-color, 5%)
+
+@media screen and (max-width:750px)
+  .navigation__list
+    text-align: center

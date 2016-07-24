@@ -1,0 +1,61 @@
+body
+  background-color: $background-color
+  font-family: $body-font
+  font-size: 14px
+  *
+    font-family: $body-font
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    font-family: $heading-font
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  margin-top: 0
+  font-weight: bold
+
+h1
+  font-size: 48px
+h2
+  font-size: 36px
+h3
+  font-size: 24px
+h4
+  font-size: 20px
+h5
+  font-size: 16px
+h6
+  font-size: 14px // same as body font size
+
+p:first-child
+  margin-top: 0
+
+// For leading paragraphs
+.lead
+  font-size: 120%
+
+a,
+a:visited,
+a:focus,
+a:active
+  color: $link-color
+  transition: color 0.3s ease
+  text-decoration: none
+
+a:hover
+  color: darken($link-color, 20%)
+  transition: color 0.3s ease
+  text-decoration: none
+
+// fluid images
+img
+  width: auto
+  max-width: 100%
+  height: auto !important

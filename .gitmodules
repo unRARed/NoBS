@@ -1,0 +1,3 @@
+[submodule "vendor/assets/stylesheets/select-css"]
+	path = vendor/assets/stylesheets/select-css
+	url = git@github.com:filamentgroup/select-css.git

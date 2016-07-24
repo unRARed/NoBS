@@ -1,0 +1,17 @@
+.notification
+  padding: 6px 10px
+  font-size: 12px
+  background-color: $info-color
+  color: $foreground-color
+  cursor: pointer
+  &.notification--positive
+    background-color: $positive-color
+  &.notification--negative
+    background-color: $negative-color
+  .notification__close
+    font-size: 10px
+    background-color: transparent
+    border: 0
+    float: right
+  + .notification
+    margin-top: 6px

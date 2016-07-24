@@ -1,0 +1,41 @@
+.media,
+.media > .media
+  margin: auto
+  overflow: hidden
+
+.media
+  .media__left
+    float: left
+    margin-right: $grid-gutter-width
+  .media__right
+    float: right
+    margin-right: $grid-gutter-width
+
+.absolute-layer
+  @include absolute-layer
+
+// For 'sticky' headers and such
+.sticky
+  position: fixed
+  z-index: 99
+  top: 0
+  left: 0
+  width: 100%
+  .sticky__visible
+    display: inline-block
+
+.sticky__visible
+  display: none
+
+// Keeps the footer anchored
+.pushes-down-footer
+  min-height: 100%
+  margin-bottom: -$footer-height
+
+.pushes-down-footer:after
+  content: ''
+  display: block
+
+.footer,
+.pushes-down-footer:after
+  height: $footer-height

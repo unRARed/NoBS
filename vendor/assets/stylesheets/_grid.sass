@@ -1,0 +1,34 @@
+.grid
+  max-width: $grid-max-width
+  margin: 0 auto
+  @include clearfix
+
+[class*='grid__column--']
+  float: left
+  width: 100%
+  min-height: 1px
+
+.grid--guttered > [class*='grid__column--']
+  margin-left: $grid-gutter-width
+  &:first-child
+    margin-left: 0
+
+@for $i from 1 through $grid-columns
+  .grid__column--#{$i}
+    width: 100% / $grid-columns * $i
+  .grid__column--#{$i}-push
+    margin-left: 100% / $grid-columns * $i
+  .grid__column--#{$i}-pull
+    margin-right: 100% / $grid-columns * $i
+
+  .grid--padded
+    padding-right: $grid-outer-padding
+    padding-left: $grid-outer-padding
+    .grid__column--#{$i}
+      padding-left: 4px
+      padding-right: 4px
+
+  $calculated-width: ( 100% - $grid-gutter-width * ($grid-columns - 1) ) / $grid-columns
+  .grid--guttered
+    .grid__column--#{$i}
+      width: $calculated-width * $i + $grid-gutter-width * ($i - 1)
